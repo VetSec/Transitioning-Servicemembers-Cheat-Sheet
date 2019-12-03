@@ -1,0 +1,1477 @@
+\documentclass[10pt,a4paper]{article}
+
+% Packages
+\usepackage{fancyhdr}           % For header and footer
+\usepackage{multicol}           % Allows multicols in tables
+\usepackage{tabularx}           % Intelligent column widths
+\usepackage{tabulary}           % Used in header and footer
+\usepackage{hhline}             % Border under tables
+\usepackage{graphicx}           % For images
+\usepackage{xcolor}             % For hex colours
+%\usepackage[utf8x]{inputenc}    % For unicode character support
+\usepackage[T1]{fontenc}        % Without this we get weird character replacements
+\usepackage{colortbl}           % For coloured tables
+\usepackage{setspace}           % For line height
+\usepackage{lastpage}           % Needed for total page number
+\usepackage{seqsplit}           % Splits long words.
+%\usepackage{opensans}          % Can't make this work so far. Shame. Would be lovely.
+\usepackage[normalem]{ulem}     % For underlining links
+% Most of the following are not required for the majority
+% of cheat sheets but are needed for some symbol support.
+\usepackage{amsmath}            % Symbols
+\usepackage{MnSymbol}           % Symbols
+\usepackage{wasysym}            % Symbols
+%\usepackage[english,german,french,spanish,italian]{babel}              % Languages
+
+% Document Info
+\author{David Decker (xfaith)}
+\pdfinfo{
+  /Title (transitioning-servicemembers.pdf)
+  /Creator (Cheatography)
+  /Author (David Decker (xfaith))
+  /Subject (Transitioning Servicemembers Cheat Sheet)
+}
+
+% Lengths and widths
+\addtolength{\textwidth}{6cm}
+\addtolength{\textheight}{-1cm}
+\addtolength{\hoffset}{-3cm}
+\addtolength{\voffset}{-2cm}
+\setlength{\tabcolsep}{0.2cm} % Space between columns
+\setlength{\headsep}{-12pt} % Reduce space between header and content
+\setlength{\headheight}{85pt} % If less, LaTeX automatically increases it
+\renewcommand{\footrulewidth}{0pt} % Remove footer line
+\renewcommand{\headrulewidth}{0pt} % Remove header line
+\renewcommand{\seqinsert}{\ifmmode\allowbreak\else\-\fi} % Hyphens in seqsplit
+% This two commands together give roughly
+% the right line height in the tables
+\renewcommand{\arraystretch}{1.3}
+\onehalfspacing
+
+% Commands
+\newcommand{\SetRowColor}[1]{\noalign{\gdef\RowColorName{#1}}\rowcolor{\RowColorName}} % Shortcut for row colour
+\newcommand{\mymulticolumn}[3]{\multicolumn{#1}{>{\columncolor{\RowColorName}}#2}{#3}} % For coloured multi-cols
+\newcolumntype{x}[1]{>{\raggedright}p{#1}} % New column types for ragged-right paragraph columns
+\newcommand{\tn}{\tabularnewline} % Required as custom column type in use
+
+% Font and Colours
+\definecolor{HeadBackground}{HTML}{333333}
+\definecolor{FootBackground}{HTML}{666666}
+\definecolor{TextColor}{HTML}{333333}
+\definecolor{DarkBackground}{HTML}{0202A3}
+\definecolor{LightBackground}{HTML}{D3D3EF}
+\renewcommand{\familydefault}{\sfdefault}
+\color{TextColor}
+
+% Header and Footer
+\pagestyle{fancy}
+\fancyhead{} % Set header to blank
+\fancyfoot{} % Set footer to blank
+\fancyhead[L]{
+\noindent
+\begin{multicols}{3}
+\begin{tabulary}{5.8cm}{C}
+    \SetRowColor{DarkBackground}
+    \vspace{-7pt}
+    {\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\noindent
+        \hspace*{-6pt}\includegraphics[width=5.8cm]{/web/www.cheatography.com/public/images/cheatography_logo.pdf}}
+    }
+\end{tabulary}
+\columnbreak
+\begin{tabulary}{11cm}{L}
+    \vspace{-2pt}\large{\bf{\textcolor{DarkBackground}{\textrm{Transitioning Servicemembers Cheat Sheet}}}} \\
+    \normalsize{by \textcolor{DarkBackground}{David Decker (xfaith)} via \textcolor{DarkBackground}{\uline{cheatography.com/35818/cs/11274/}}}
+\end{tabulary}
+\end{multicols}}
+
+\fancyfoot[L]{ \footnotesize
+\noindent
+\begin{multicols}{3}
+\begin{tabulary}{5.8cm}{LL}
+  \SetRowColor{FootBackground}
+  \mymulticolumn{2}{p{5.377cm}}{\bf\textcolor{white}{Cheatographer}}  \\
+  \vspace{-2pt}David Decker (xfaith) \\
+  \uline{cheatography.com/xfaith} \\
+        \uline{\seqsplit{www}.linkedin.com/in/davidcdecker/}
+  \end{tabulary}
+\vfill
+\columnbreak
+\begin{tabulary}{5.8cm}{L}
+  \SetRowColor{FootBackground}
+  \mymulticolumn{1}{p{5.377cm}}{\bf\textcolor{white}{Cheat Sheet}}  \\
+   \vspace{-2pt}Published 29th March, 2017.\\
+   Updated 10th October, 2019.\\
+   Page {\thepage} of \pageref{LastPage}.
+\end{tabulary}
+\vfill
+\columnbreak
+\begin{tabulary}{5.8cm}{L}
+  \SetRowColor{FootBackground}
+  \mymulticolumn{1}{p{5.377cm}}{\bf\textcolor{white}{Sponsor}}  \\
+  \SetRowColor{white}
+  \vspace{-5pt}
+  %\includegraphics[width=48px,height=48px]{dave.jpeg}
+  Measure your website readability!\\
+  www.readability-score.com
+\end{tabulary}
+\end{multicols}}
+
+
+
+
+\begin{document}
+\raggedright
+\raggedcolumns
+
+% Set font size to small. Switch to any value
+% from this page to resize cheat sheet text:
+% www.emerson.emory.edu/services/latex/latex_169.html
+\footnotesize % Small font.
+
+\begin{multicols*}{2}
+
+\begin{tabularx}{8.4cm}{x{3.52 cm} x{4.48 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Starting Points (Websites you will need)}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+Manage Your Timeline (DoDTap) & \seqsplit{https://www.dodtap.mil/rest/docs?filename=Managing\_Your\_Transition\_Timeline.pdf} \tn 
+% Row Count 4 (+ 4)
+% Row 1
+\SetRowColor{white}
+TAP curriculum & \seqsplit{https://www.dodtap.mil/} \tn 
+% Row Count 6 (+ 2)
+% Row 2
+\SetRowColor{LightBackground}
+eBenefits & \seqsplit{https://www.ebenefits.va.gov/ebenefits/homepage} \tn 
+% Row Count 9 (+ 3)
+% Row 3
+\SetRowColor{white}
+Disability Rating\{\{nl\}\} (CFR 38) & \seqsplit{https://www.benefits.va.gov/WARMS/bookc.asp} \tn 
+% Row Count 11 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+Vets.gov & https://www.vets.gov/ \tn 
+% Row Count 12 (+ 1)
+% Row 5
+\SetRowColor{white}
+DFAS (For Retiree) & \seqsplit{https://mypay.dfas.mil/} \tn 
+% Row Count 14 (+ 2)
+% Row 6
+\SetRowColor{LightBackground}
+VA disability calculator & \seqsplit{https://www.hillandponton.com/va-disability-calculator/} \tn 
+% Row Count 17 (+ 3)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\SetRowColor{LightBackground}
+\mymulticolumn{2}{x{8.4cm}}{DOD TAP - Check VMET/Verfiy TGPS/Capstone information \newline eBenefits/Vets.gov - Check GI Bill/Post 9-11 \& Check Disability claims \newline {\bf{Make sure you have a DS LOGON Username/Password before turning in CAC}} \newline {\bf{RETIREE - Contact TRICARE day after EAOS to start TRICARE PRIME RETIRED}}}  \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{3.52 cm} x{4.48 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{DoD Contractor Pathway}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+1. Start your Disability Claim & Check Disability Section \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+2. Get LinkedIn Premium Account & \seqsplit{https://socialimpact.linkedin.com/programs/veterans} \tn 
+% Row Count 6 (+ 4)
+% Row 2
+\SetRowColor{LightBackground}
+3. Get a Resume & Check Resume Section for assistance \tn 
+% Row Count 8 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{3.76 cm} x{4.24 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{VA Disability Claims Assistance}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+DAV & \seqsplit{https://www.dav.org/veterans/} \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+VFW & \seqsplit{https://www.vfw.org/assistance/va-claims-separation-benefits} \tn 
+% Row Count 5 (+ 3)
+% Row 2
+\SetRowColor{LightBackground}
+AMVETS & \seqsplit{http://amvets.org/filing-va-claims/} \tn 
+% Row Count 7 (+ 2)
+% Row 3
+\SetRowColor{white}
+*Wounded Warrior Project & \seqsplit{https://www.woundedwarriorproject.org/programs/benefits-service} \tn 
+% Row Count 10 (+ 3)
+% Row 4
+\SetRowColor{LightBackground}
+Blue Button & \seqsplit{http://www.tricareonline.com} \tn 
+% Row Count 12 (+ 2)
+% Row 5
+\SetRowColor{white}
+American Legion & \seqsplit{https://www.legion.org/veteransbenefits/departmentofficers} \tn 
+% Row Count 15 (+ 3)
+% Row 6
+\SetRowColor{LightBackground}
+Burn Pit \{\{nl\}\}Registration & \seqsplit{https://veteran.mobilehealth.va.gov/AHBurnPitRegistry/} \tn 
+% Row Count 18 (+ 3)
+% Row 7
+\SetRowColor{white}
+Disabilities Rating\{\{nl\}\}(CFR 38) & \seqsplit{https://www.benefits.va.gov/WARMS/bookc.asp} \tn 
+% Row Count 22 (+ 4)
+% Row 8
+\SetRowColor{LightBackground}
+eBenefits & \seqsplit{https://www.ebenefits.va.gov/ebenefits/homepage} \tn 
+% Row Count 26 (+ 4)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\SetRowColor{LightBackground}
+\mymulticolumn{2}{x{8.4cm}}{6 MONTHS FROM EAOS START YOUR DISABILITY CLAIMS. \newline            \{\{ac\}\}   {\bf{Request ALHTA File from MTF}}\{\{ac\}\} \newline * - WWP - Must be a member to use service}  \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{3.92 cm} x{4.08 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Transitioning Assistance Programs}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+\mymulticolumn{2}{x{8.4cm}}{TGPS/TRS/TAPS} \tn 
+% Row Count 1 (+ 1)
+% Row 1
+\SetRowColor{white}
+VetCTAP & \seqsplit{https://www.vetctap.org/} \tn 
+% Row Count 3 (+ 2)
+% Row 2
+\SetRowColor{LightBackground}
+REBOOT\{\{nl\}\} (California) & \seqsplit{http://www.nvtsi.org/} \tn 
+% Row Count 5 (+ 2)
+% Row 3
+\SetRowColor{white}
+Breakline & \seqsplit{http://breakline.org/} \tn 
+% Row Count 7 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+Patriots Path\{\{nl\}\} (North Carolina) & \seqsplit{http://patriots-path}.org/ \tn 
+% Row Count 9 (+ 2)
+% Row 5
+\SetRowColor{white}
+Centurion Military Alliance & \seqsplit{http://cmawarrior.org/} \tn 
+% Row Count 11 (+ 2)
+% Row 6
+\SetRowColor{LightBackground}
+Veteran Transition Support & \seqsplit{https://www.veteranstransitionsupport.org/} \tn 
+% Row Count 14 (+ 3)
+% Row 7
+\SetRowColor{white}
+Hope for the Warriors & \seqsplit{http://www.hopeforthewarriors.org} \tn 
+% Row Count 16 (+ 2)
+% Row 8
+\SetRowColor{LightBackground}
+Deloitte (CORE) & \seqsplit{https://www2.deloitte.com/us/en/pages/about-deloitte/articles/join-deloitte-core-leadership-program.html} \tn 
+% Row Count 22 (+ 6)
+% Row 9
+\SetRowColor{white}
+FourBlock & \seqsplit{http://fourblock.org/} \tn 
+% Row Count 24 (+ 2)
+% Row 10
+\SetRowColor{LightBackground}
+Patriot Boot Camp\{\{nl\}\} (Entrepreneur) & \seqsplit{http://patriotbootcamp}.org/about/ \tn 
+% Row Count 27 (+ 3)
+% Row 11
+\SetRowColor{white}
+Operation New Uniform & \seqsplit{https://onuvets.org/veterans/programs/} \tn 
+% Row Count 29 (+ 2)
+% Row 12
+\SetRowColor{LightBackground}
+Military Talent Partners & \seqsplit{https://militarytalentpartners}.com/ \tn 
+% Row Count 31 (+ 2)
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\vfill
+\columnbreak
+\begin{tabularx}{8.4cm}{x{3.92 cm} x{4.08 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Transitioning Assistance Programs (cont)}}  \tn
+% Row 13
+\SetRowColor{LightBackground}
+CandorFul & \seqsplit{https://candorful.com/} \tn 
+% Row Count 2 (+ 2)
+% Row 14
+\SetRowColor{white}
+Independence Project & \seqsplit{https://independenceproject}.org/ \tn 
+% Row Count 4 (+ 2)
+% Row 15
+\SetRowColor{LightBackground}
+Camaraderie Foundation & \seqsplit{https://camaraderiefoundation}.org/programs/ \tn 
+% Row Count 7 (+ 3)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\SetRowColor{LightBackground}
+\mymulticolumn{2}{x{8.4cm}}{Most of these "classes" provide \seqsplit{resume/interview/coaching}.}  \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{2.96 cm} x{5.04 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Mentorship Programs}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+Veterans Mentor Network & \seqsplit{https://www.veteranmentornetwork.org/} \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+American Corp Partner & http://www.acp-usa.org/ \tn 
+% Row Count 4 (+ 2)
+% Row 2
+\SetRowColor{LightBackground}
+Veterati & \seqsplit{https://www.veterati.com/} \tn 
+% Row Count 5 (+ 1)
+% Row 3
+\SetRowColor{white}
+\seqsplit{HonorOurTroops} & \seqsplit{http://hrtroops.org/mentorship-program/} \tn 
+% Row Count 7 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+eMentor & \seqsplit{https://www.ementorprogram.org/veteran-ementor/} \tn 
+% Row Count 9 (+ 2)
+% Row 5
+\SetRowColor{white}
+WorkofHonor & \seqsplit{https://www.workofhonor.com/} \tn 
+% Row Count 11 (+ 2)
+% Row 6
+\SetRowColor{LightBackground}
+MVP Vets & \seqsplit{https://www.mvpvets.org/im-a-veteran/} \tn 
+% Row Count 13 (+ 2)
+% Row 7
+\SetRowColor{white}
+Stand Besides Them & \seqsplit{http://www.standbesidethem.org/} \tn 
+% Row Count 15 (+ 2)
+% Row 8
+\SetRowColor{LightBackground}
+The Commit Foundation & \seqsplit{http://www.commitfoundation.org/} \tn 
+% Row Count 17 (+ 2)
+% Row 9
+\SetRowColor{white}
+Allies in Service & \seqsplit{https://alliesinservice.org/our-programs} \tn 
+% Row Count 19 (+ 2)
+% Row 10
+\SetRowColor{LightBackground}
+Gallant Few & \seqsplit{https://gallantfew.org/about-us/} \tn 
+% Row Count 21 (+ 2)
+% Row 11
+\SetRowColor{white}
+HireServed & \seqsplit{https://hireserved.com/payitforward-career-coaching/} \tn 
+% Row Count 24 (+ 3)
+% Row 12
+\SetRowColor{LightBackground}
+USO Pathfinder & \seqsplit{https://www.uso.org/programs/uso-pathfinder} \tn 
+% Row Count 26 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{3.36 cm} x{4.64 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Clothes/Makeovers}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+SaveASuit & \seqsplit{http://saveasuit.org/military-veteran/} \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+Suits4Soldiers & YMCA \tn 
+% Row Count 3 (+ 1)
+% Row 2
+\SetRowColor{LightBackground}
+Suiting Warriors & \seqsplit{https://suitingwarriors}.org/ \tn 
+% Row Count 5 (+ 2)
+% Row 3
+\SetRowColor{white}
+\seqsplit{MakeOversThatMatter} (Female) & \seqsplit{http://www.makeoversthatmatter.org/} \tn 
+% Row Count 7 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+The Dress Code (Women) & \seqsplit{http://www.thedresscodeca.com/} \tn 
+% Row Count 9 (+ 2)
+% Row 5
+\SetRowColor{white}
+Boots2Suits (VA) & \seqsplit{https://www.bootstosuits.org/} \tn 
+% Row Count 11 (+ 2)
+% Row 6
+\SetRowColor{LightBackground}
+Next Uniform (Final Salute) & \seqsplit{https://www.finalsaluteinc.org/34.html} \tn 
+% Row Count 13 (+ 2)
+% Row 7
+\SetRowColor{white}
+Veterans Closet & \seqsplit{http://www.teamaddo.com/} \tn 
+% Row Count 15 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{4 cm} x{4 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{IT/CyberSecurity Training}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+FortiVets\{\{nl\}\} (Fortinet Veteran Program) & \seqsplit{https://www.fortinet.com/corporate/careers/vets.html} \tn 
+% Row Count 3 (+ 3)
+% Row 1
+\SetRowColor{white}
+Amazon AWS & \seqsplit{https://aws.amazon.com/education/awseducate/veterans/} \tn 
+% Row Count 6 (+ 3)
+% Row 2
+\SetRowColor{LightBackground}
+FedVTE(Free) & \seqsplit{https://fedvte.usalearning.gov/} \tn 
+% Row Count 8 (+ 2)
+% Row 3
+\SetRowColor{white}
+VetsinTech & \seqsplit{https://vetsintech.co/} \tn 
+% Row Count 10 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+DOD SkillBridge & \seqsplit{https://dodskillbridge}.com/ \tn 
+% Row Count 12 (+ 2)
+% Row 5
+\SetRowColor{white}
+SAS & \seqsplit{https://support.sas.com/training/veterans/\#} \tn 
+% Row Count 15 (+ 3)
+% Row 6
+\SetRowColor{LightBackground}
+FDM & \seqsplit{http://www.fdmgroup.com/us/about/veterans-initiative/} \tn 
+% Row Count 18 (+ 3)
+% Row 7
+\SetRowColor{white}
+Cisco VTIP & \seqsplit{http://csr.cisco.com/casestudy/veterans-program} \tn 
+% Row Count 21 (+ 3)
+% Row 8
+\SetRowColor{LightBackground}
+Splunk\{\{nl\}\} (Certification) & \seqsplit{https://workplus.splunk.com/veterans} \tn 
+% Row Count 23 (+ 2)
+% Row 9
+\SetRowColor{white}
+CBT Nuggets\{\{nl\}\} (Essay Required) & \seqsplit{https://www.cbtnuggets.com/veterans-promo} \tn 
+% Row Count 26 (+ 3)
+% Row 10
+\SetRowColor{LightBackground}
+Warrior to Cyber Warrior & \seqsplit{https://www.warrior2cyberwarrior.com/index.html} \tn 
+% Row Count 29 (+ 3)
+% Row 11
+\SetRowColor{white}
+NetAPP & \seqsplit{http://hireourheroes}.org/wp-content/uploads/2014/04/NCSA-Academic-Program-Overview-2014.pdf \tn 
+% Row Count 34 (+ 5)
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\vfill
+\columnbreak
+\begin{tabularx}{8.4cm}{x{4 cm} x{4 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{IT/CyberSecurity Training (cont)}}  \tn
+% Row 12
+\SetRowColor{LightBackground}
+VetForce \{\{nl\}\}(SalesForce) & \seqsplit{https://veterans.force.com/NewVetForceHome} \tn 
+% Row Count 3 (+ 3)
+% Row 13
+\SetRowColor{white}
+NS2Serves\{\{nl\}\} (SAP) & \seqsplit{http://www.ns2serves.org/training-course/} \tn 
+% Row Count 6 (+ 3)
+% Row 14
+\SetRowColor{LightBackground}
+SANS VETSuccess & \seqsplit{https://www.sans.org/cybertalent/immersion-academy/academies} \tn 
+% Row Count 9 (+ 3)
+% Row 15
+\SetRowColor{white}
+Npower\{\{nl\}\} (TX,NJ,CA) & \seqsplit{http://www.npower.org/our-programs/technology-service-corps/veterans.aspx} \tn 
+% Row Count 13 (+ 4)
+% Row 16
+\SetRowColor{LightBackground}
+IBM Veterans Initiative & \seqsplit{https://www.casy.us/ibm-i2/calendar} \tn 
+% Row Count 15 (+ 2)
+% Row 17
+\SetRowColor{white}
+Hire Our Heros \{\{nl\}\}CyberSecurity Training & \seqsplit{https://hireourheroes}.org/percipio-training/ \tn 
+% Row Count 18 (+ 3)
+% Row 18
+\SetRowColor{LightBackground}
+Facebook \{\{nl\}\}Cybersecurity for Veterans & \seqsplit{https://fbcodepath.splashthat.com/} \tn 
+% Row Count 21 (+ 3)
+% Row 19
+\SetRowColor{white}
+With You With Me & \seqsplit{https://withyouwithme}.com/ \tn 
+% Row Count 23 (+ 2)
+% Row 20
+\SetRowColor{LightBackground}
+VetTec\{\{nl\}\} (VA VetTec) & \seqsplit{https://benefits.va.gov/GIBILL/fgib/VetTec\_Veteran.asp} \tn 
+% Row Count 26 (+ 3)
+% Row 21
+\SetRowColor{white}
+CyberForce\{\{nl\}\} (CAC Req) & \seqsplit{https://portal.cyberforce.site/home} \tn 
+% Row Count 28 (+ 2)
+% Row 22
+\SetRowColor{LightBackground}
+Palo Alto & \seqsplit{https://live.paloaltonetworks.com/t5/Veteran-Training-Initiative/ct-p/Veterans\_Network} \tn 
+% Row Count 33 (+ 5)
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\vfill
+\columnbreak
+\begin{tabularx}{8.4cm}{x{4 cm} x{4 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{IT/CyberSecurity Training (cont)}}  \tn
+% Row 23
+\SetRowColor{LightBackground}
+SAIC Cyber Scholarship & \seqsplit{https://www.iamcybersafe.org/s/cyberwarrior} \tn 
+% Row Count 3 (+ 3)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{4 cm} x{4 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{College/Education}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+Stanford Post-9/11 Veterans IGNITE & \seqsplit{https://www.gsb.stanford.edu/programs/stanford-ignite/campus/post-9-11-veterans} \tn 
+% Row Count 4 (+ 4)
+% Row 1
+\SetRowColor{white}
+Warrior-Scholar (Education Re-immersion) & \seqsplit{http://warrior-scholar}.org/ \tn 
+% Row Count 6 (+ 2)
+% Row 2
+\SetRowColor{LightBackground}
+Posse Veterans Program & \seqsplit{https://www.possefoundation.org/veterans-posse-program} \tn 
+% Row Count 9 (+ 3)
+% Row 3
+\SetRowColor{white}
+Pave (Mentor For College) & \seqsplit{http://paveoncampus.org/} \tn 
+% Row Count 11 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+Service2School & \seqsplit{https://service2school}.org/ \tn 
+% Row Count 13 (+ 2)
+% Row 5
+\SetRowColor{white}
+Student Veterans & \seqsplit{https://studentveterans}.org/ \tn 
+% Row Count 15 (+ 2)
+% Row 6
+\SetRowColor{LightBackground}
+Athletes of Valor (College Sports) & \seqsplit{https://www.athletesofvalor.com/} \tn 
+% Row Count 17 (+ 2)
+% Row 7
+\SetRowColor{white}
+Tuck Next Step (\$) & \seqsplit{http://nextstep.tuck.dartmouth.edu/who/} \tn 
+% Row Count 19 (+ 2)
+% Row 8
+\SetRowColor{LightBackground}
+The Paradigm Switch & \seqsplit{http://theparadigmswitch}.org/ \tn 
+% Row Count 21 (+ 2)
+% Row 9
+\SetRowColor{white}
+Modern States (CLEP) & \seqsplit{https://modernstates}.org/ \tn 
+% Row Count 23 (+ 2)
+% Row 10
+\SetRowColor{LightBackground}
+Veteran Magazine List of Scholarships & \seqsplit{https://www.usveteransmagazine.com/list-of-military-scholarships-for-service-members-spouses-and-dependents/} \tn 
+% Row Count 29 (+ 6)
+% Row 11
+\SetRowColor{white}
+Under Grad Vets & \seqsplit{https://undergraduvets}.com/ \tn 
+% Row Count 31 (+ 2)
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\vfill
+\columnbreak
+\begin{tabularx}{8.4cm}{x{4 cm} x{4 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{College/Education (cont)}}  \tn
+% Row 12
+\SetRowColor{LightBackground}
+Test Prep & \seqsplit{https://eknowledge.com/newlookaff/home.html?coupon=fbec67159} \tn 
+% Row Count 3 (+ 3)
+% Row 13
+\SetRowColor{white}
+College Scholarship Search & \seqsplit{https://www.niche.com/colleges/scholarships/} \tn 
+% Row Count 6 (+ 3)
+% Row 14
+\SetRowColor{LightBackground}
+CCME Scholarship & \seqsplit{http://www.ccmeonline.org/scholarships} \tn 
+% Row Count 8 (+ 2)
+% Row 15
+\SetRowColor{white}
+Veterans Upward Bound & \seqsplit{https://www2.ed.gov/programs/triovub/index.html} \tn 
+% Row Count 11 (+ 3)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{3.36 cm} x{4.64 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Computer Coding}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+Coder Vets & https://codervets.org/ \tn 
+% Row Count 1 (+ 1)
+% Row 1
+\SetRowColor{white}
+(Chicago) Code Platoon & \seqsplit{https://www.codeplatoon.org/} \tn 
+% Row Count 3 (+ 2)
+% Row 2
+\SetRowColor{LightBackground}
+OperationCode & \seqsplit{https://operationcode.org/} \tn 
+% Row Count 5 (+ 2)
+% Row 3
+\SetRowColor{white}
+Vets on Point & \seqsplit{http://vetsonpoint.2-drops.com/} \tn 
+% Row Count 7 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+Vets Who Code & \seqsplit{https://vetswhocode.io/} \tn 
+% Row Count 8 (+ 1)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{3.84 cm} x{4.16 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Training}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+Vetted \seqsplit{(Bussiness/Management)} & https://vetted.org/ \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+Tech Qualled (Tech Sales) & \seqsplit{http://qualled.com/im-a-veteran/} \tn 
+% Row Count 4 (+ 2)
+% Row 2
+\SetRowColor{LightBackground}
+Mervis Foundation (Salesforce) & \seqsplit{https://merivisfoundation}.org/ \tn 
+% Row Count 6 (+ 2)
+% Row 3
+\SetRowColor{white}
+Veterans On Wallstreet & \seqsplit{http://veteransonwallstreet}.com/about \tn 
+% Row Count 9 (+ 3)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{3.04 cm} x{4.96 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Veterans with Disabilities}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+EBV/EBV-F/ & \seqsplit{https://ivmf.syracuse.edu/veteran-and-family-resources/starting-growing-a-business/} \tn 
+% Row Count 4 (+ 4)
+% Row 1
+\SetRowColor{white}
+Veteran Ocean Adventures & \seqsplit{http://veteransoceanadventures}.org \tn 
+% Row Count 6 (+ 2)
+% Row 2
+\SetRowColor{LightBackground}
+Guitars 4 Vets (PTSD) & \seqsplit{http://www.guitars4vets.org/} \tn 
+% Row Count 8 (+ 2)
+% Row 3
+\SetRowColor{white}
+Operation IMPACT & \seqsplit{http://www.northropgrumman.com/CorporateResponsibility/OperationIMPACT/Pages/default.aspx} \tn 
+% Row Count 12 (+ 4)
+% Row 4
+\SetRowColor{LightBackground}
+Companions for Heros & \seqsplit{https://companionsforheroes}.org/ \tn 
+% Row Count 14 (+ 2)
+% Row 5
+\SetRowColor{white}
+Wings for Warriors & \seqsplit{https://wingsforwarriors}.org \tn 
+% Row Count 16 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{X}
+\SetRowColor{DarkBackground}
+\mymulticolumn{1}{x{8.4cm}}{\bf\textcolor{white}{Books}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{8.4cm}}{Out of Uniform} \tn 
+% Row Count 1 (+ 1)
+% Row 1
+\SetRowColor{white}
+\mymulticolumn{1}{x{8.4cm}}{Down Range- A Transitioning Veteran} \tn 
+% Row Count 2 (+ 1)
+% Row 2
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{8.4cm}}{Networking For Veterans} \tn 
+% Row Count 3 (+ 1)
+% Row 3
+\SetRowColor{white}
+\mymulticolumn{1}{x{8.4cm}}{Deployment to Employment:} \tn 
+% Row Count 4 (+ 1)
+% Row 4
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{8.4cm}}{The Prior-Service Entrepreneur} \tn 
+% Row Count 5 (+ 1)
+% Row 5
+\SetRowColor{white}
+\mymulticolumn{1}{x{8.4cm}}{PCS to Corporate America} \tn 
+% Row Count 6 (+ 1)
+% Row 6
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{8.4cm}}{Military-To-Civilian Career Transition 2nd Ed} \tn 
+% Row Count 7 (+ 1)
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\SetRowColor{LightBackground}
+\mymulticolumn{1}{x{8.4cm}}{All these book can be found on Amazon.}  \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}-}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{3.92 cm} x{4.08 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Real Estate Training/Certification}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+MetroBrokers (VET to REP) & \seqsplit{https://www.metrobrokers.com/veterans-to-rep} \tn 
+% Row Count 3 (+ 3)
+% Row 1
+\SetRowColor{white}
+Texas (Realtors) & \seqsplit{https://www.trec.texas.gov/trec-benefits-veterans} \tn 
+% Row Count 6 (+ 3)
+% Row 2
+\SetRowColor{LightBackground}
+Long\& Foster (Real Estate Scholarship) & \seqsplit{http://www.longandfoster.com/pages/real-estate-scholarships} \tn 
+% Row Count 9 (+ 3)
+% Row 3
+\SetRowColor{white}
+Century 21 & \seqsplit{https://www.century21.com/careerfranchise/real-estate-career/recruiting-americas-heroes} \tn 
+% Row Count 14 (+ 5)
+% Row 4
+\SetRowColor{LightBackground}
+PenFed Realty & \seqsplit{http://www.penfedrealty.com/pages/5628433/Real-heroes-landing-page.aspx} \tn 
+% Row Count 18 (+ 4)
+% Row 5
+\SetRowColor{white}
+Veterans To Realtors (Edina) & \seqsplit{https://www.edinarealty.com/free-career-training-for-veterans\#/} \tn 
+% Row Count 22 (+ 4)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{3.44 cm} x{4.56 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Social Media Groups}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+(FB) Veterans 2 Veterans & \seqsplit{https://www.facebook.com/groups/626936820727015/} \tn 
+% Row Count 3 (+ 3)
+% Row 1
+\SetRowColor{white}
+(FB) Veterans 2 Federal Govt & \seqsplit{https://www.facebook.com/groups/1808503219428933/} \tn 
+% Row Count 6 (+ 3)
+% Row 2
+\SetRowColor{LightBackground}
+(FB) Veterans Beer Clup & \seqsplit{https://www.facebook.com/veteransbeerclub/} \tn 
+% Row Count 8 (+ 2)
+% Row 3
+\SetRowColor{white}
+(Li) Veterans Mentor Network & \seqsplit{https://www.linkedin.com/groups/4466143} \tn 
+% Row Count 10 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+(Slack) Veteran Cyber Security & \seqsplit{https://veteransec.com/} \tn 
+% Row Count 12 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{4 cm} x{4 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Corporate Pathway}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+1. Start your Disability Claim & Check Disability Section \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+2. Get LinkedIn Premium Account & \seqsplit{https://socialimpact}.linkedin.com/programs/veterans \tn 
+% Row Count 5 (+ 3)
+% Row 2
+\SetRowColor{LightBackground}
+3. Look into Internship \{\{nl\}\}HireMilitary (Skillbridge) & \seqsplit{https://www.hiremilitary.us/} \tn 
+% Row Count 8 (+ 3)
+% Row 3
+\SetRowColor{white}
+4.  Get a Mentor & Check Mentorship Section  (American Corporate Partners) \tn 
+% Row Count 11 (+ 3)
+% Row 4
+\SetRowColor{LightBackground}
+5. Get a Resumes & Check Resume Assistance Section \tn 
+% Row Count 13 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{3.52 cm} x{4.48 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Govt Employee Pathway}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+1. Start your Disability Claim & Check Disability Section \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+2.  Get LinkedIn Premium Account & \seqsplit{https://socialimpact.linkedin.com/programs/veterans} \tn 
+% Row Count 5 (+ 3)
+% Row 2
+\SetRowColor{LightBackground}
+3.  Federal Resume & Check Resume Section for Federal Resume Support \tn 
+% Row Count 8 (+ 3)
+% Row 3
+\SetRowColor{white}
+4. Apply for Federal Jobs & \seqsplit{https://www.usajobs.gov/} \tn 
+% Row Count 10 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+{\bf{Federal Job Resources}} & {\bf{(Once Working)}} \tn 
+% Row Count 12 (+ 2)
+% Row 5
+\SetRowColor{white}
+SF-183 PDF & \seqsplit{https://www.opm.gov/forms/pdf\_fill/sf813.pdf} \tn 
+% Row Count 14 (+ 2)
+% Row 6
+\SetRowColor{LightBackground}
+SF-183 Assistance & \seqsplit{http://www.cufon.org/CRG/CRG/Sf813.html} \tn 
+% Row Count 16 (+ 2)
+% Row 7
+\SetRowColor{white}
+Military Time Buy Back Estimator & \seqsplit{https://www.dfas.mil/civilianemployees/militaryservice/militaryservicedeposits/estimator.html} \tn 
+% Row Count 21 (+ 5)
+% Row 8
+\SetRowColor{LightBackground}
+Military Buy Back FAQ 1 & \seqsplit{https://www.federalretirement.net/militarybuyback.htm} \tn 
+% Row Count 24 (+ 3)
+% Row 9
+\SetRowColor{white}
+Benefeds (Federal Vision/Dental) & \seqsplit{https://www.benefeds.com/} \tn 
+% Row Count 26 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\SetRowColor{LightBackground}
+\mymulticolumn{2}{x{8.4cm}}{DD-214 - {\emph{*make sure campaigns are listed, with time frames if possible (helps with SF-183) \newline }}SF-183 = Verification of a Military Retirees Service in NonWartime Campaigns or Expeditions}  \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{2.4 cm} x{5.6 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Resume Assistance}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+\seqsplit{HireHerosUSA} & \seqsplit{https://www.hireheroesusa.org/tools-resources/} \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+Resume4Vets & \seqsplit{http://www.resumes4vets.org/} \tn 
+% Row Count 3 (+ 1)
+% Row 2
+\SetRowColor{LightBackground}
+Conditions Set & \seqsplit{http://www.conditionsset.org/mission} \tn 
+% Row Count 5 (+ 2)
+% Row 3
+\SetRowColor{white}
+Allies in Service & \seqsplit{https://alliesinservice.org/our-programs} \tn 
+% Row Count 7 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{4.88 cm} x{3.12 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Resume Optimization}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+JobScan (Optimize Keywords vs Posting) & \seqsplit{https://www.jobscan.co/} \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+Resunate & \seqsplit{http://resunate}.com \tn 
+% Row Count 4 (+ 2)
+% Row 2
+\SetRowColor{LightBackground}
+Vmock & \seqsplit{https://www.vmock.com/} \tn 
+% Row Count 6 (+ 2)
+% Row 3
+\SetRowColor{white}
+SkillSyncer (1 yr free) & \seqsplit{https://skillsyncer}.com/ \tn 
+% Row Count 8 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{2.48 cm} x{5.52 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Job Boards}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+LinkedIn & http://www.linkedin.com \tn 
+% Row Count 1 (+ 1)
+% Row 1
+\SetRowColor{white}
+VetJobs & http://vetjobs.com/ \tn 
+% Row Count 2 (+ 1)
+% Row 2
+\SetRowColor{LightBackground}
+Vet FastPort & \seqsplit{https://vetfasttrack.org/} \tn 
+% Row Count 3 (+ 1)
+% Row 3
+\SetRowColor{white}
+Indeed & http://www.indeed.com \tn 
+% Row Count 4 (+ 1)
+% Row 4
+\SetRowColor{LightBackground}
+USAJobs & https://www.usajobs.gov/ \tn 
+% Row Count 5 (+ 1)
+% Row 5
+\SetRowColor{white}
+GIJobs & http://www.gijobs.com/ \tn 
+% Row Count 6 (+ 1)
+% Row 6
+\SetRowColor{LightBackground}
+Clearance Jobs & \seqsplit{https://www.clearancejobs.com/} \tn 
+% Row Count 8 (+ 2)
+% Row 7
+\SetRowColor{white}
+Corporate Gray & \seqsplit{https://www.corporategray.com/} \tn 
+% Row Count 10 (+ 2)
+% Row 8
+\SetRowColor{LightBackground}
+Miltiary Mojo & \seqsplit{https://militarymojo.org/} \tn 
+% Row Count 12 (+ 2)
+% Row 9
+\SetRowColor{white}
+SkillMil & \seqsplit{https://www.skillmil.com/} \tn 
+% Row Count 13 (+ 1)
+% Row 10
+\SetRowColor{LightBackground}
+NavNet & \seqsplit{http://www.navnetresources.com/} \tn 
+% Row Count 15 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{4.24 cm} x{3.76 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Job Resources}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+HireVeterans & \seqsplit{http://www.hireveterans.com/} \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+Corporate America Supports You & \seqsplit{http://casy.msccn.org/} \tn 
+% Row Count 4 (+ 2)
+% Row 2
+\SetRowColor{LightBackground}
+Hire Military  (SkillBridge) & \seqsplit{https://www.hiremilitary.us/} \tn 
+% Row Count 6 (+ 2)
+% Row 3
+\SetRowColor{white}
+NavNet & \seqsplit{http://www.navnetresources.com/} \tn 
+% Row Count 8 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+Career Assessment & \seqsplit{https://careerguideforvets}.com/ \tn 
+% Row Count 10 (+ 2)
+% Row 5
+\SetRowColor{white}
+O*Net & \seqsplit{https://www.onetonline.org/} \tn 
+% Row Count 12 (+ 2)
+% Row 6
+\SetRowColor{LightBackground}
+SkillMil & \seqsplit{https://www.skillmil.com/} \tn 
+% Row Count 14 (+ 2)
+% Row 7
+\SetRowColor{white}
+Shift & \seqsplit{https://www.shift.org/} \tn 
+% Row Count 16 (+ 2)
+% Row 8
+\SetRowColor{LightBackground}
+Patriot Placements\{\{nl\}\} \seqsplit{(Resume/LinkedIN/Coaching)} & \seqsplit{http://patriotplacements}.org/ \tn 
+% Row Count 19 (+ 3)
+% Row 9
+\SetRowColor{white}
+Military Talent Source & \seqsplit{https://militarytalentsource}.com/ \tn 
+% Row Count 21 (+ 2)
+% Row 10
+\SetRowColor{LightBackground}
+Veteran Jobs Mission & \seqsplit{https://www.veteranjobsmission.com/} \tn 
+% Row Count 23 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\SetRowColor{LightBackground}
+\mymulticolumn{2}{x{8.4cm}}{{\bf{\{\{ac\}\}Get Free upgrade for 1 year on LINKEDIN (Veteran) and/or (Spouse) at }}https://linkedinforgood.linkedin.com/programs/veterans\{\{ac\}\}}  \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{4 cm} x{4 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Other Stuff}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+WorkShop for Warriors & \seqsplit{https://workshopsforwarriors}.org/ \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+VetNET & \seqsplit{http://www.vetnethq.com/} \tn 
+% Row Count 4 (+ 2)
+% Row 2
+\SetRowColor{LightBackground}
+LinkedIn Makeover & \seqsplit{http://www.linkedin-makeover.com/services/veteran-support/} \tn 
+% Row Count 7 (+ 3)
+% Row 3
+\SetRowColor{white}
+Helmets to HardHats & \seqsplit{https://www.helmetstohardhats.org/} \tn 
+% Row Count 9 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+USACares & \seqsplit{http://www.usacares.org/programs} \tn 
+% Row Count 11 (+ 2)
+% Row 5
+\SetRowColor{white}
+Armed Services Arts\{\{nl\}\} Partnership (Comedy Bootcamp) & \seqsplit{http://www.asapasap.org/comedy/} \tn 
+% Row Count 14 (+ 3)
+% Row 6
+\SetRowColor{LightBackground}
+Warriors 4 Wireless & \seqsplit{http://www.warriors4wireless.org/} \tn 
+% Row Count 16 (+ 2)
+% Row 7
+\SetRowColor{white}
+Beyond the Uniform & \seqsplit{https://www.beyondtheuniform.io/} \tn 
+% Row Count 18 (+ 2)
+% Row 8
+\SetRowColor{LightBackground}
+Veterans to Farmers & \seqsplit{https://www.veteranstofarmers.org/} \tn 
+% Row Count 20 (+ 2)
+% Row 9
+\SetRowColor{white}
+I wanna give back & \seqsplit{https://www.iwannagiveback.org/} \tn 
+% Row Count 22 (+ 2)
+% Row 10
+\SetRowColor{LightBackground}
+Warriors to Work & \seqsplit{https://www.woundedwarriorproject.org/programs/warriors-to-work} \tn 
+% Row Count 26 (+ 4)
+% Row 11
+\SetRowColor{white}
+Backpacks for Life & \seqsplit{https://www.backpacksforlife.org/our-mission} \tn 
+% Row Count 29 (+ 3)
+% Row 12
+\SetRowColor{LightBackground}
+Dream Foundation & \seqsplit{http://www.dreamfoundation.org/} \tn 
+% Row Count 31 (+ 2)
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\vfill
+\columnbreak
+\begin{tabularx}{8.4cm}{x{4 cm} x{4 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Other Stuff (cont)}}  \tn
+% Row 13
+\SetRowColor{LightBackground}
+Soldiers Angels & \seqsplit{https://soldiersangels}.org/programs.html \tn 
+% Row Count 2 (+ 2)
+% Row 14
+\SetRowColor{white}
+Tech4Troops & \seqsplit{https://techfortroops}.org/ \tn 
+% Row Count 4 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\SetRowColor{LightBackground}
+\mymulticolumn{2}{x{8.4cm}}{{\emph{*}} Some of these might belong in multiple groups....}  \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{3.52 cm} x{4.48 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Start A Business}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+Boots2Business & \seqsplit{https://sbavets.force.com/s/} \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+Small Business Admin & \seqsplit{https://www.sba.gov/starting-business/how-start-business/business-types/veteran-owned-businesses} \tn 
+% Row Count 7 (+ 5)
+% Row 2
+\SetRowColor{LightBackground}
+Where Communities Serve Veterans & \seqsplit{https://wherecommunitiesserveveterans}.org/ \tn 
+% Row Count 9 (+ 2)
+% Row 3
+\SetRowColor{white}
+Bunker Labs (Multiple Projects) & \seqsplit{https://bunkerlabs.org/} \tn 
+% Row Count 11 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+The Rosie Network & \seqsplit{https://therosienetwork}.org/ \tn 
+% Row Count 13 (+ 2)
+% Row 5
+\SetRowColor{white}
+Bank of America Vet Loan & \seqsplit{https://about.bankofamerica.com/en-us/partnering-locally/bank-launches-lending-program.html?bcen=8a6b\#fbid=abtw6\_QmxTC} \tn 
+% Row Count 19 (+ 6)
+% Row 6
+\SetRowColor{LightBackground}
+National VIP & \seqsplit{https://nationalvip.org/Home/Home} \tn 
+% Row Count 21 (+ 2)
+% Row 7
+\SetRowColor{white}
+Victory Spark (Seed Accelerator) & \seqsplit{https://angel.co/company/victoryspark} \tn 
+% Row Count 23 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{4 cm} x{4 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Certifications}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+Onward 2 Opportunity (1 Certification) & \seqsplit{http://onward2opportunity}.org/ \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+AllState & \seqsplit{http://allstateveterans}.com/?\_ga=1.2976816.1286101389.1489028316 \tn 
+% Row Count 6 (+ 4)
+% Row 2
+\SetRowColor{LightBackground}
+Vet2PM(\$\$) & \seqsplit{http://www.vets2pm.com/} \tn 
+% Row Count 8 (+ 2)
+% Row 3
+\SetRowColor{white}
+VA HR Academy & \seqsplit{https://www.vahracademy.va.gov/} \tn 
+% Row Count 10 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+LEAN Certification Course (Camp Pendleton) & \seqsplit{https://www.eventbrite.com/o/veterans-transition-support-7544018039} \tn 
+% Row Count 14 (+ 4)
+% Row 5
+\SetRowColor{white}
+OSHA 10hr Training (Camp Pendleton) & \seqsplit{https://www.eventbrite.com/o/veterans-transition-support-7544018039} \tn 
+% Row Count 18 (+ 4)
+% Row 6
+\SetRowColor{LightBackground}
+BMW MSTEP (BMW Auto Tech) & \seqsplit{http://www.bmwstep.com/bmw-mstep/} \tn 
+% Row Count 20 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\SetRowColor{LightBackground}
+\mymulticolumn{2}{x{8.4cm}}{\$\$ - costs money (maybe grants/discounts available)}  \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{3.92 cm} x{4.08 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Regional Opps}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+(TEXAS) Vetted & \seqsplit{http://www.vettedfoundation.org/} \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+(CHICAGO) PMP Course & \seqsplit{http://www.blackdiamondcharities.org/} \tn 
+% Row Count 4 (+ 2)
+% Row 2
+\SetRowColor{LightBackground}
+(SAN DIEGO) Operation Connect & \seqsplit{http://sdbusinesschamber}.com/operation-connect/ \tn 
+% Row Count 7 (+ 3)
+% Row 3
+\SetRowColor{white}
+(CA) Troops to College & \seqsplit{http://www.calstate.edu/veterans/} \tn 
+% Row Count 9 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+(Chicago) Code Platoon & \seqsplit{http://www.codeplatoon.org/} \tn 
+% Row Count 11 (+ 2)
+% Row 5
+\SetRowColor{white}
+CTAP (Oceanside, CA) & \seqsplit{http://vancnorthcounty}.org/events-calendar/ \tn 
+% Row Count 14 (+ 3)
+% Row 6
+\SetRowColor{LightBackground}
+Work for Warriors (CA) & \seqsplit{http://workforwarriors}.org/ \tn 
+% Row Count 16 (+ 2)
+% Row 7
+\SetRowColor{white}
+North Carolina for Military Employment & \seqsplit{http://www.nc4me.org/} \tn 
+% Row Count 18 (+ 2)
+% Row 8
+\SetRowColor{LightBackground}
+(Tampa) Project Transition USA & \seqsplit{http://projecttransitionusa}.com/ \tn 
+% Row Count 20 (+ 2)
+% Row 9
+\SetRowColor{white}
+(Georgia Tech) & \seqsplit{https://pe.gatech.edu/military-programs} \tn 
+% Row Count 22 (+ 2)
+% Row 10
+\SetRowColor{LightBackground}
+(NJ) Veteran Transition & \seqsplit{http://www.veteranstransition.net/about\_us} \tn 
+% Row Count 25 (+ 3)
+% Row 11
+\SetRowColor{white}
+(DC) DogTag Inc & \seqsplit{http://www.dogtaginc.org/} \tn 
+% Row Count 27 (+ 2)
+% Row 12
+\SetRowColor{LightBackground}
+CalVet & \seqsplit{https://www.calvet.ca.gov/} \tn 
+% Row Count 29 (+ 2)
+% Row 13
+\SetRowColor{white}
+TexVet & \seqsplit{https://www.texvet.org/} \tn 
+% Row Count 31 (+ 2)
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\vfill
+\columnbreak
+\begin{tabularx}{8.4cm}{x{3.92 cm} x{4.08 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Regional Opps (cont)}}  \tn
+% Row 14
+\SetRowColor{LightBackground}
+Tactical Launch (San Diego) Bussiness & \seqsplit{http://tl.thinktanksd.org/} \tn 
+% Row Count 2 (+ 2)
+% Row 15
+\SetRowColor{white}
+Vetlanta (GA) & \seqsplit{https://www.vetlanta.org/} \tn 
+% Row Count 4 (+ 2)
+% Row 16
+\SetRowColor{LightBackground}
+(OHIO) Veteran Bonus (Free \$)? & \seqsplit{https://veteransbonus}.ohio.gov/odvs\_web/Default.aspx \tn 
+% Row Count 7 (+ 3)
+% Row 17
+\SetRowColor{white}
+Cyber Workforce Academy (MD) & \seqsplit{https://www.sans.org/cybertalent/cyber-workforce-academy} \tn 
+% Row Count 10 (+ 3)
+% Row 18
+\SetRowColor{LightBackground}
+Project Transition (FL) & \seqsplit{https://www.projecttransitionusa.com/} \tn 
+% Row Count 12 (+ 2)
+% Row 19
+\SetRowColor{white}
+Boots to Roots (Maine) & \seqsplit{http://www.boots2roots.org/} \tn 
+% Row Count 14 (+ 2)
+% Row 20
+\SetRowColor{LightBackground}
+CyberVets (MD/VA/CO) & \seqsplit{https://www.cvent.com/surveys/Welcome.aspx?s=ebcafbec-2b33-4155-b32c-42a706d317b9} \tn 
+% Row Count 19 (+ 5)
+% Row 21
+\SetRowColor{white}
+OverWatch PartnerShip (Mentor/OH) & \seqsplit{https://overwatchpartnership}.org \tn 
+% Row Count 21 (+ 2)
+% Row 22
+\SetRowColor{LightBackground}
+Missouri Veterans Commission & \seqsplit{https://mvc.dps.mo.gov/} \tn 
+% Row Count 23 (+ 2)
+% Row 23
+\SetRowColor{white}
+Georgia Veterans Education & \seqsplit{http://gavectr.org/index.html} \tn 
+% Row Count 25 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{2.48 cm} x{5.52 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Therapeutic Adventures}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+Outward Bound & \seqsplit{http://www.outwardbound.org/course-finder/?age=\&programs\%5B\%5D=108} \tn 
+% Row Count 3 (+ 3)
+% Row 1
+\SetRowColor{white}
+Camp Patriot & https://camppatriot.org/ \tn 
+% Row Count 4 (+ 1)
+% Row 2
+\SetRowColor{LightBackground}
+Oath Inc & http://www.oathinc.org/ \tn 
+% Row Count 5 (+ 1)
+% Row 3
+\SetRowColor{white}
+No Barriers & \seqsplit{http://www.nobarriersusa.org/warriors/} \tn 
+% Row Count 7 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+Warrior Expedition & \seqsplit{https://warriorexpeditions}.org/ \tn 
+% Row Count 9 (+ 2)
+% Row 5
+\SetRowColor{white}
+Vet Expeditions & \seqsplit{http://www.vetexpeditions.com} \tn 
+% Row Count 11 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\SetRowColor{LightBackground}
+\mymulticolumn{2}{x{8.4cm}}{{\bf{Majority are available for disabled veterans}}*}  \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{3.52 cm} x{4.48 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Mental Health}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+Emory Healthcare (PTSD/MST/TBI) & \seqsplit{https://www.emoryhealthcare.org/centers-programs/veterans-program/index.html} \tn 
+% Row Count 4 (+ 4)
+% Row 1
+\SetRowColor{white}
+Cohen Health (Low Cost/Free) & \seqsplit{https://www.cohenveteransnetwork.org/at-a-glance/} \tn 
+% Row Count 7 (+ 3)
+% Row 2
+\SetRowColor{LightBackground}
+The Soldiers Project (Free) & \seqsplit{https://www.thesoldiersproject.org/} \tn 
+% Row Count 9 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\SetRowColor{LightBackground}
+\mymulticolumn{2}{x{8.4cm}}{Emory - Free for Post 9/11 Vets}  \tn 
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{4 cm} x{4 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Discounts}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+EPIC Ski Season Pass (Veil Mts) & \seqsplit{https://www.epicpass.com/info/military-faqs.aspx} \tn 
+% Row Count 3 (+ 3)
+% Row 1
+\SetRowColor{white}
+Tmobile Military One Plan & \seqsplit{https://www.t-mobile.com/offers/military-phone-plans} \tn 
+% Row Count 6 (+ 3)
+% Row 2
+\SetRowColor{LightBackground}
+Microsoft HUP & \seqsplit{https://enterprise.microsoft.com/en-us/industries/government/military-discount-through-the-home-use-program/} \tn 
+% Row Count 15 (+ 9)
+% Row 3
+\SetRowColor{white}
+Veteran Discounts (ID.me) & \seqsplit{https://shop.id.me/military?page=1} \tn 
+% Row Count 17 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+NewEgg 1yr Premium & \seqsplit{https://promotions.newegg.com/nepro/16-1748/index.html} \tn 
+% Row Count 20 (+ 3)
+% Row 5
+\SetRowColor{white}
+Hire Our Heros (Flights for Job Interview) & \seqsplit{http://statesidelegal}.org/transitioning-veterans-fly-free-job-interviews-hire-our-heroes \tn 
+% Row Count 27 (+ 7)
+% Row 6
+\SetRowColor{LightBackground}
+Hilton HHonors (Free Stay for Interviews) & \seqsplit{https://www.edd.ca.gov/jobs\_and\_training/pubs/wsin17-34.pdf} \tn 
+% Row Count 32 (+ 5)
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\vfill
+\columnbreak
+\begin{tabularx}{8.4cm}{x{4 cm} x{4 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Discounts (cont)}}  \tn
+% Row 7
+\SetRowColor{LightBackground}
+Samsung & \seqsplit{https://www.samsung.com/us/shop/discount-program/military/} \tn 
+% Row Count 3 (+ 3)
+% Row 8
+\SetRowColor{white}
+Frigidaire & \seqsplit{https://frigidaire.sheerid.com/} \tn 
+% Row Count 5 (+ 2)
+% Row 9
+\SetRowColor{LightBackground}
+Computer Banc & \seqsplit{https://shop.computerbanc.org/Computers-for-Veterans\_c2.htm} \tn 
+% Row Count 8 (+ 3)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{2.96 cm} x{5.04 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Special Forces (SOF)}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+The Honor Foundation & \seqsplit{https://www.honor.org/our-program/} \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+Wharton College (SEALS) & \seqsplit{https://leadership.wharton.upenn.edu/veteran-transition-program/} \tn 
+% Row Count 5 (+ 3)
+% Row 2
+\SetRowColor{LightBackground}
+Elite Meet & \seqsplit{https://www.elitemeet.us/} \tn 
+% Row Count 6 (+ 1)
+% Row 3
+\SetRowColor{white}
+Your Grateful Nation & \seqsplit{https://www.yourgratefulnation.org/\#/home} \tn 
+% Row Count 8 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+Overwatch & \seqsplit{https://www.efoverwatch.com/} \tn 
+% Row Count 10 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{4 cm} x{4 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{Military Spouse Opps}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+Military Spouse Coders & \seqsplit{http://milspousecoders}.org/ \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+Blue Star Families & \seqsplit{https://bluestarfam.org/} \tn 
+% Row Count 4 (+ 2)
+% Row 2
+\SetRowColor{LightBackground}
+V-Wise & \seqsplit{https://ivmf.syracuse.edu/veteran-and-family-resources/starting-growing-a-business/v-wise/} \tn 
+% Row Count 9 (+ 5)
+% Row 3
+\SetRowColor{white}
+Military Spouse Corporate Career Network & \seqsplit{http://www.msccn.org/} \tn 
+% Row Count 11 (+ 2)
+% Row 4
+\SetRowColor{LightBackground}
+American Corporate Partners (Mentor) & \seqsplit{https://www.acp-usa.org/mentoring-program/veteran-application} \tn 
+% Row Count 15 (+ 4)
+% Row 5
+\SetRowColor{white}
+Onward 2 Opportunity & \seqsplit{https://onward2opportunity-vctp}.org/ \tn 
+% Row Count 17 (+ 2)
+% Row 6
+\SetRowColor{LightBackground}
+LinkedIn (Free Premium 1yr) & \seqsplit{https://linkedinforgood}.linkedin.com/programs/veterans/milspouses \tn 
+% Row Count 21 (+ 4)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+\begin{tabularx}{8.4cm}{x{3.36 cm} x{4.64 cm} }
+\SetRowColor{DarkBackground}
+\mymulticolumn{2}{x{8.4cm}}{\bf\textcolor{white}{VSO}}  \tn
+% Row 0
+\SetRowColor{LightBackground}
+Team RWB & \seqsplit{https://www.teamrwb.org/} \tn 
+% Row Count 2 (+ 2)
+% Row 1
+\SetRowColor{white}
+The Mission Continues & \seqsplit{https://missioncontinues}.org/ \tn 
+% Row Count 4 (+ 2)
+\hhline{>{\arrayrulecolor{DarkBackground}}--}
+\end{tabularx}
+\par\addvspace{1.3em}
+
+
+% That's all folks
+\end{multicols*}
+
+\end{document}
